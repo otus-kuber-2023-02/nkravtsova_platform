@@ -3,15 +3,15 @@ kind: Pod
 metadata:
   name: web
   labels:
-    app: hw1
+    app: web
 spec:
   containers:
-  - name: hw1
+  - name: web
     image: 445039/hw1:latest
   initContainers:
-  - name: inithw1
+  - name: initweb
     image: busybox:1.31.1
-    command: ['sh', '-c', 'wget -O- http://tinyurl.com/otus-k8s-intro --no-check-certificate | sh']
+    command: ['sh', '-c', 'wget -O- --no-check-certificate http://tinyurl.com/otus-k8s-intro | sh']
     volumeMounts:
       - name: app
         mountPath: /app
