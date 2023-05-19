@@ -25,3 +25,47 @@
 8. Создан и применен манифест конфигмапа
 9. Создан и применен манифест сервиса LoadBalancer
 10. Создан и применен манифест ingress (service ingress)
+
+# kubernetes-volumes 
+1. Закоммитен манифест minio-statefulset.yaml
+2. Закоммитен манифест сервиса minio-headlessservice.yaml
+3. Созданы pvc, pv, storageclass, pod, service. Pod в статусе running
+
+# kubernetes-security 
+task01
+1. Создан и применен манифест для создания ns security
+2. Создан и применен манифест для создания ServiceAccount bob
+3. Создан и применен манифест для создания ClusterRoleBinding для назначения роли admin
+4. Создан и применен манифест для создания ServiceAccount dave без доступа к кластеру
+
+task02
+1. Создан и применен манифест для создания ns prometheus
+2. Создан и применен манифест для создания ServiceAccount carol
+3. Создан и применен манифест для создания Role для get, list, watch подов
+4. Создан и применен манифест для создания RoleBinding для связывания role и serviceaccount
+
+task03
+1. Создан и применен манифест для создания ns prometheus
+2. Создан и применен манифест для создания ServiceAccount carol
+3. Создан и применен манифест для создания Role для get, list, watch подов
+4. Создан и применен манифест для создания RoleBinding для связывания role и serviceaccount
+
+# kubernetes-templating
+1. Создан ns и release nginx-ingress
+2. Добавлен репо с helm chart certmanager, установлен chart certmanager
+3. Кастомизирована установка chartmuseum, выполнена установка chartmuseum
+4. Установлен harbor
+5. Установлен hipster-shop
+6. Вынесено описание сервиса frontend с использованием переменных
+7. Обновлены зависимости hipster-shop
+8. Обновлен release hipster-shop, ресурсы frontend вновь созданы
+9. Кастомизирован сервис cartservice на два окружения 
+
+# kubernetes-operators
+1. Создан CRD, после применения исправляем ошибку. добавляем описание version.schema.openAPIV3Schema, применен
+2. Создан CR, закомментирована строка usless_data, применен
+3. Добавлено описание обязательных полей, CRD применен
+4. Для разворота custom controller создан файл mysqloperator.py, созданы шаблоны
+5. Описан MySQL контроллер, запущен оператор, выполнены проверки
+6. Собран Docker образ, запулен
+7. Выполнен деплой оператора
