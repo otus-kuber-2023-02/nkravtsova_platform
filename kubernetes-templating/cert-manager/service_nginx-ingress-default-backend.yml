@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: nginx-ingress
+    meta.helm.sh/release-namespace: nginx-ingress
+  creationTimestamp: "2023-05-10T08:24:53Z"
+  labels:
+    app: nginx-ingress
+    app.kubernetes.io/managed-by: Helm
+    chart: nginx-ingress-1.41.3
+    component: default-backend
+    heritage: Helm
+    release: nginx-ingress
+  name: nginx-ingress-default-backend
+  namespace: nginx-ingress
+  resourceVersion: "12842417"
+  uid: 3a27b0c8-af9d-4b32-b8e5-527a85809a00
+spec:
+  clusterIP: 10.233.4.61
+  clusterIPs:
+  - 10.233.4.61
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: nginx-ingress
+    app.kubernetes.io/component: default-backend
+    release: nginx-ingress
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
