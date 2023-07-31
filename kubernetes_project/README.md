@@ -78,6 +78,24 @@
 	helm install  prometheus prometheus-community/kube-prometheus-stack
 
 3. Логирование:
+	3.1 Создать namespace
+		kubectl apply -f observability/namespace.yaml
+	3.2 Создать storageclass
+		kubectl apply -f observability/storageclass.yaml
+	3.2 Создать сервисы
+		kubectl apply -f observability/service.yaml
+	3.3 Создать statefulset
+		kubectl apply -f observability/statefulset.yaml
+	3.4 Создать pv
+		kubectl apply -f observability/pv.yaml
+	3.5 Проверить, что pvc в статусе bound
+		kubectl get pvc -n elastic-system
+	3.6 Создать deployment
+		kubectl apply -f observability/deployment.yaml
+	3.7 Проверить, что поды в статусе running
+		kubectl get po -n elastic-system
+	3.8 Создать fluentd
+		kubectl apply -f observability/fluentd.yaml
 
 4. CI/CD ArgoCD
 	kubectl create namespace argocd
